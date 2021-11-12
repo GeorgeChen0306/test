@@ -1,5 +1,5 @@
 #!/bin/bash
 
-/home/win.wiegandrp/h5binary | grep FINAL | grep -v DBG | cut -d':' -f 2-4 | tr -d '[a-z/A-Z/=/ ]' | sed s/':'/','/g
+/home/win.wiegandrp/h5binary | grep FINAL | grep -v DBG | cut -d":" -f 2-4 | tr -d "[a-z/A-Z/=/ ]" | sed s/":"/","/g
 
 exit 0

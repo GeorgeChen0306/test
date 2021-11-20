@@ -1,0 +1,7 @@
+#!/bin/bash
+yes > /dev/null &
+ps -af
+kill $!
+ps
+ps # After shown it terminate, redisplay to ensure the user the process is kill
+exit 0

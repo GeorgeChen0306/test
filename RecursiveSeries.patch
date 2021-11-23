@@ -1,0 +1,24 @@
+--- RecursiveSeries-Error.cc	2021-11-19 16:34:37.743876007 -0500
++++ RecursiveSeries-Fixed.cc	2021-11-23 17:42:31.797262037 -0500
+@@ -11,7 +11,11 @@
+  *  https://www.mathsisfun.com/algebra/sequences-sums-geometric.html
+  **/
+ double GeometricSum(double a, double r, int n) {
+-  return a*pow(r,n-1) + GeometricSum(a,r,n-1);
++  if (n == 0){
++    return 1;
++  }else{
++    return a*pow(r,n-1) + GeometricSum(a,r,n-1);
++  }
+ }
+ 
+ 
+@@ -29,7 +33,7 @@
+   cin >> n;
+   cout << endl;
+   
+-  cout << "The sum of that series is: " << GeometricSum(a,r,n) << endl;
++  cout << "The sum of that series is: " << GeometricSum(a,r,n)-1 << endl;
+ 
+   return 0;
+ }
